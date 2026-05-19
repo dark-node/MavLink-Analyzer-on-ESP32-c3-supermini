@@ -1,0 +1,87 @@
+MavLink Analyzer — Proprietary License
+All Rights Reserved
+
+Copyright (c) 2026 darknode. All rights reserved.
+
+IMPORTANT: Read this agreement before accessing, copying, or using any
+material from this repository.
+
+1. DEFINITIONS
+
+   "Software" means the MavLink Analyzer firmware, source code, object code,
+   binary images, build scripts, MAVLink dialect files, web interface assets,
+   documentation that reveals implementation details, and all related materials.
+
+   "Owner" means the copyright holder named above.
+
+   "You" means any individual or legal entity accessing this repository.
+
+2. NO LICENSE GRANT
+
+   No rights are granted to You except the limited right to view publicly
+   posted documentation and **partial source code** (including API headers,
+   reference modules, and non-compilable stubs) for personal informational
+   purposes only.
+
+3. PROHIBITED ACTS (without prior written permission from the Owner)
+
+   You may NOT, in whole or in part:
+
+   - use the Software for any purpose;
+   - copy, reproduce, or mirror the Software or repository;
+   - modify, adapt, translate, or create derivative works;
+   - distribute, publish, sublicense, lease, lend, or sell the Software;
+   - disclose the Software to third parties;
+   - reverse engineer, decompile, or disassemble firmware binaries;
+   - remove or alter copyright or license notices;
+   - use the name "MavLink Analyzer" in a way that suggests endorsement.
+
+4. SOURCE CODE
+
+   Unless the Owner explicitly provides source code to You in a separate
+   written agreement, no source code is licensed. Public repositories may
+   intentionally exclude source files.
+
+5. FIRMWARE BINARIES
+
+   Firmware images, if made available, are provided only under the same
+   restrictions. Possession of a binary does not grant rights to use,
+   modify, or redistribute it.
+
+6. REQUESTS FOR PERMISSION
+
+   For licensing, collaboration, or access to source code, contact the Owner
+   before any use. See CONTACT.md in this repository (or the Owner's GitHub
+   profile) for current contact details.
+
+   Written permission must explicitly state what is allowed (use, modify,
+   distribute, etc.). Verbal permission is not sufficient.
+
+7. TERMINATION
+
+   Any unauthorized use automatically terminates any limited viewing right.
+   The Owner may pursue all remedies available under applicable law.
+
+8. DISCLAIMER
+
+   THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF
+   ANY KIND. THE OWNER IS NOT LIABLE FOR ANY DAMAGES ARISING FROM USE OR
+   INABILITY TO USE THE MATERIALS.
+
+9. GOVERNING LAW
+
+   This agreement is governed by the laws applicable in the Owner's country
+   of residence, unless mandatory local law requires otherwise.
+
+10. ENTIRE AGREEMENT
+
+    This file constitutes the entire agreement regarding the Software.
+    If any provision is unenforceable, the remaining provisions remain in effect.
+
+---
+
+Українською (короткий виклад, не замінює англомовний текст вище):
+
+  Усі права захищені. Без письмової згоди власника заборонено використовувати,
+  копіювати, змінювати, поширювати або застосовувати програмний код і прошивку.
+  Публічний репозиторій може не містити вихідного коду навмисно.

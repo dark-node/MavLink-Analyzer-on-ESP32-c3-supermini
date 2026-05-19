@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>3</version>
+  <dialect>100</dialect>
+
+  <enums>
+    <enum name="MAV_TYPE">
+      <entry value="0" name="MAV_TYPE_GENERIC"/>
+      <entry value="2" name="MAV_TYPE_QUADROTOR"/>
+      <entry value="13" name="MAV_TYPE_HEXAROTOR"/>
+      <entry value="1" name="MAV_TYPE_FIXED_WING"/>
+    </enum>
+    <enum name="MAV_AUTOPILOT">
+      <entry value="0" name="MAV_AUTOPILOT_GENERIC"/>
+      <entry value="3" name="MAV_AUTOPILOT_ARDUPILOTMEGA"/>
+      <entry value="12" name="MAV_AUTOPILOT_PX4"/>
+    </enum>
+    <enum name="MAV_STATE">
+      <entry value="0" name="MAV_STATE_UNINIT"/>
+      <entry value="3" name="MAV_STATE_STANDBY"/>
+      <entry value="4" name="MAV_STATE_ACTIVE"/>
+    </enum>
+    <enum name="GPS_FIX_TYPE">
+      <entry value="0" name="GPS_FIX_TYPE_NO_GPS"/>
+      <entry value="2" name="GPS_FIX_TYPE_2D_FIX"/>
+      <entry value="3" name="GPS_FIX_TYPE_3D_FIX"/>
+      <entry value="4" name="GPS_FIX_TYPE_DGPS"/>
+      <entry value="5" name="GPS_FIX_TYPE_RTK_FLOAT"/>
+      <entry value="6" name="GPS_FIX_TYPE_RTK_FIXED"/>
+    </enum>
+    <enum name="MAV_SEVERITY">
+      <entry value="0" name="MAV_SEVERITY_EMERGENCY"/>
+      <entry value="1" name="MAV_SEVERITY_ALERT"/>
+      <entry value="2" name="MAV_SEVERITY_CRITICAL"/>
+      <entry value="3" name="MAV_SEVERITY_ERROR"/>
+      <entry value="4" name="MAV_SEVERITY_WARNING"/>
+      <entry value="5" name="MAV_SEVERITY_NOTICE"/>
+      <entry value="6" name="MAV_SEVERITY_INFO"/>
+      <entry value="7" name="MAV_SEVERITY_DEBUG"/>
+    </enum>
+    <enum name="MAV_FRAME">
+      <entry value="0" name="MAV_FRAME_GLOBAL"/>
+      <entry value="3" name="MAV_FRAME_GLOBAL_RELATIVE_ALT"/>
+      <entry value="5" name="MAV_FRAME_GLOBAL_INT"/>
+      <entry value="6" name="MAV_FRAME_GLOBAL_RELATIVE_ALT_INT"/>
+      <entry value="7" name="MAV_FRAME_LOCAL_NED"/>
+      <entry value="10" name="MAV_FRAME_MISSION"/>
+    </enum>
+    <enum name="MAV_CMD">
+      <entry value="16" name="MAV_CMD_NAV_WAYPOINT"/>
+      <entry value="17" name="MAV_CMD_NAV_LOITER_UNLIM"/>
+      <entry value="18" name="MAV_CMD_NAV_LOITER_TURNS"/>
+      <entry value="20" name="MAV_CMD_NAV_RETURN_TO_LAUNCH"/>
+      <entry value="21" name="MAV_CMD_NAV_LAND"/>
+      <entry value="22" name="MAV_CMD_NAV_TAKEOFF"/>
+      <entry value="176" name="MAV_CMD_DO_SET_MODE"/>
+      <entry value="400" name="MAV_CMD_COMPONENT_ARM_DISARM"/>
+    </enum>
+  </enums>
+
+  <messages>
+    <message id="0" name="HEARTBEAT">
+      <description>Heartbeat</description>
+      <field type="uint8_t" name="type" enum="MAV_TYPE"/>
+      <field type="uint8_t" name="autopilot" enum="MAV_AUTOPILOT"/>
+      <field type="uint8_t" name="base_mode"/>
+      <field type="uint32_t" name="custom_mode"/>
+      <field type="uint8_t" name="system_status" enum="MAV_STATE"/>
+      <field type="uint8_t" name="mavlink_version"/>
+    </message>
+    <message id="24" name="GPS_RAW_INT">
+      <description>GPS raw fix</description>
+      <field type="uint64_t" name="time_usec"/>
+      <field type="uint8_t" name="fix_type" enum="GPS_FIX_TYPE"/>
+      <field type="int32_t" name="lat"/>
+      <field type="int32_t" name="lon"/>
+      <field type="int32_t" name="alt"/>
+      <field type="uint16_t" name="eph"/>
+      <field type="uint16_t" name="epv"/>
+      <field type="uint16_t" name="vel"/>
+      <field type="uint16_t" name="cog"/>
+      <field type="uint8_t" name="satellites_visible"/>
+    </message>
+    <message id="30" name="ATTITUDE">
+      <description>Attitude</description>
+      <field type="uint32_t" name="time_boot_ms"/>
+      <field type="float" name="roll"/>
+      <field type="float" name="pitch"/>
+      <field type="float" name="yaw"/>
+      <field type="float" name="rollspeed"/>
+      <field type="float" name="pitchspeed"/>
+      <field type="float" name="yawspeed"/>
+    </message>
+    <message id="33" name="GLOBAL_POSITION_INT">
+      <description>Global position</description>
+      <field type="uint32_t" name="time_boot_ms"/>
+      <field type="int32_t" name="lat"/>
+      <field type="int32_t" name="lon"/>
+      <field type="int32_t" name="alt"/>
+      <field type="int32_t" name="relative_alt"/>
+      <field type="int16_t" name="vx"/>
+      <field type="int16_t" name="vy"/>
+      <field type="int16_t" name="vz"/>
+      <field type="uint16_t" name="hdg"/>
+    </message>
+    <message id="74" name="VFR_HUD">
+      <description>VFR HUD</description>
+      <field type="float" name="airspeed"/>
+      <field type="float" name="groundspeed"/>
+      <field type="int16_t" name="heading"/>
+      <field type="uint16_t" name="throttle"/>
+      <field type="float" name="alt"/>
+      <field type="float" name="climb"/>
+    </message>
+    <message id="75" name="COMMAND_INT">
+      <description>Command int</description>
+      <field type="float" name="param1"/>
+      <field type="float" name="param2"/>
+      <field type="float" name="param3"/>
+      <field type="float" name="param4"/>
+      <field type="int32_t" name="x"/>
+      <field type="int32_t" name="y"/>
+      <field type="float" name="z"/>
+      <field type="uint16_t" name="command" enum="MAV_CMD"/>
+      <field type="uint8_t" name="target_system"/>
+      <field type="uint8_t" name="target_component"/>
+      <field type="uint8_t" name="frame" enum="MAV_FRAME"/>
+      <field type="uint8_t" name="current"/>
+      <field type="uint8_t" name="autocontinue"/>
+    </message>
+    <message id="76" name="COMMAND_LONG">
+      <description>Command long</description>
+      <field type="float" name="param1"/>
+      <field type="float" name="param2"/>
+      <field type="float" name="param3"/>
+      <field type="float" name="param4"/>
+      <field type="float" name="param5"/>
+      <field type="float" name="param6"/>
+      <field type="float" name="param7"/>
+      <field type="uint16_t" name="command" enum="MAV_CMD"/>
+      <field type="uint8_t" name="target_system"/>
+      <field type="uint8_t" name="target_component"/>
+      <field type="uint8_t" name="confirmation"/>
+    </message>
+    <message id="152" name="MEMINFO">
+      <description>ArduPilot MEMINFO</description>
+      <field type="uint16_t" name="brkval"/>
+      <field type="uint16_t" name="freemem"/>
+    </message>
+    <message id="163" name="AHRS">
+      <description>ArduPilot AHRS status</description>
+      <field type="float" name="omegaIx"/>
+      <field type="float" name="omegaIy"/>
+      <field type="float" name="omegaIz"/>
+      <field type="float" name="accel_weight"/>
+      <field type="float" name="renorm_val"/>
+      <field type="float" name="error_rp"/>
+      <field type="float" name="error_yaw"/>
+    </message>
+    <message id="253" name="STATUSTEXT">
+      <description>Status text</description>
+      <field type="uint8_t" name="severity" enum="MAV_SEVERITY"/>
+      <field type="char[50]" name="text"/>
+    </message>
+  </messages>
+</mavlink>

@@ -1,0 +1,40 @@
+# PlatformIO / build
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Python venv (mavgen)
+.venv-mavgen/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/.browse.c_cpp.db*
+.vscode/ipch/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Secrets / local
+.env
+.env.*
+secrets/
+
+# Local contact overrides (optional)
+CONTACT.local.md
+
+# Firmware binaries in tree (use GitHub Releases instead)
+*.bin
+!releases/.gitkeep
+
+# Agent / editor
+.cursor/
+
+# Private project sync (keep only in owner's dev folder)
+SOURCE_ARCHIVE_PRIVATE.md
+GITHUB_PORTFOLIO_PUBLISH.md
